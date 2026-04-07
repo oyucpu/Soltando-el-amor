@@ -3,335 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Latidos — Ilustración editorial</title>
+  <title>Portfolio Amor & Desamor</title>
   <style>
-    /* --- Estilos base (Mantenidos) --- */
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: #f7f3ef;
-      color: #333;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
-    header {
+
+    section {
+      padding: 60px 20px;
       text-align: center;
-      padding: 60px 20px 20px;
     }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
     }
-    .subtitle {
-      color: #777;
-    }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
-    .main-image {
-      width: 100%;
-      border-radius: 12px;
-      margin: 40px 0;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      cursor: pointer; /* Indica que se puede hacer clic */
-      transition: transform 0.2s; /* Efecto suave al pasar el ratón */
-    }
-    .main-image:hover {
-      transform: scale(1.02); /* Pequeño aumento al hover */
-    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
     }
+
     .card {
       background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      display: flex;
-      flex-direction: column;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
     }
-    .card-image {
-      width: 100%;
-      height: 200px;
-      object-fit: contain;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      cursor: pointer; /* Indica que se puede hacer clic */
-      transition: transform 0.2s;
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .card-image:hover {
-      transform: scale(1.05); /* Pequeño aumento al hover */
-    }
-    .title {
-      font-weight: bold;
-      margin-bottom: 15px;
-      font-size: 1.2em;
-    }
-    .poem {
-      font-style: italic;
+
+    .amor { background: #ffe4ec; }
+    .conexion { background: #e0f7fa; }
+    .crisis { background: #f8d7da; }
+    .desamor { background: #e5e5e5; }
+    .renacer { background: #fff4cc; }
+    .futuro { background: #e6ffe6; }
+
+    p {
       color: #555;
-      white-space: pre-line;
-      line-height: 1.6;
+      font-style: italic;
     }
-    footer {
+   .center {
+      display: flex;
+      justify-content: center; /* centra horizontalmente */
+      gap: 20px; /* espacio entre las dos cards */
+      width: 100%;
+      grid-column: 1 / -1; /* ocupa toda la fila del grid */
+    }
+
+    h1 {
       text-align: center;
-      padding: 40px;
-      color: #999;
     }
 
-    /* --- NUEVOS Estilos para el Modal --- */
-    .modal {
-      display: none; /* Oculto por defecto */
-      position: fixed; /* Fijo en pantalla */
-      z-index: 1000; /* Por encima de todo */
-      left: 0;
-      top: 0;
-      width: 100%; /* Pantalla completa */
-      height: 100%;
-      overflow: auto; /* Permite scroll si la imagen es grande */
-      background-color: rgba(0,0,0,0.9); /* Fondo negro con opacidad */
-      justify-content: center; /* Centrado horizontal */
-      align-items: center; /* Centrado vertical */
-      cursor: zoom-out; /* Cursor para cerrar */
-    }
-
-    .modal.active {
-      display: flex; /* Se muestra cuando está activo */
-    }
-
-    .modal-content {
-      margin: auto;
-      display: block;
-      max-width: 90%; /* Máximo ancho */
-      max-height: 90%; /* Máximo alto */
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(255,255,255,0.2);
-      animation-name: zoom; /* Animación de apertura */
-      animation-duration: 0.3s;
-      cursor: default; /* Cursor normal en la imagen */
-    }
-
-    /* Animación de apertura del modal */
-    @keyframes zoom {
-      from {transform:scale(0)} 
-      to {transform:scale(1)}
-    }
-
-    /* El botón de cerrar (x) */
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #bbb;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    /* Responsividad para la imagen del modal */
-    @media only screen and (max-width: 700px){
-      .modal-content {
-        width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Latidos</h1>
-  <div class="subtitle">Serie de ilustración editorial sobre el amor</div>
-</header>
+<h1>Portfolio del Amor y del Desamor</h1>
 
-<div class="container">
-  <p>
-    "Latidos" es una serie de ilustraciones que explora el amor en sus distintas fases: el encuentro, la conexión, la ruptura, la memoria y el desapego.
-  </p>
+  <section class="amor">
+    <h2>🌹 Amor</h2>
+    <div class="grid">
+      <div class="card"><h3>Casualidad</h3><p>Coincidir contigo fue la casualidad más intencionada del destino.</p></div>
+      <div class="card"><h3>Primer Latido</h3><p>No sabía tu nombre, pero ya me sabía tu risa.</p></div>
+      <div class="card"><h3>Rutinas Compartidas</h3><p>No eras el plan, pero te convertiste en mi lugar favorito.</p></div>
+      <div class="card"><h3>Descubrirte</h3><p>Me aprendí tus silencios antes que tus palabras.</p></div>
+      <span class="center"><div class="card"><h3>Promesas</h3><p>Contigo, el futuro dejó de dar miedo.</p></div>
+      <div class="card"><h3>Intensidad</h3><p>Éramos fuego… y nunca supimos apagarlo.</p></div></span>
+    </div>
+  </section>
 
-  <img src="latidos_completo.png" class="main-image modal-trigger" alt="Serie Latidos Completa">
+  <section class="conexion">
+    <h2>💫 Conexión</h2>
+    <div class="grid">
+      <div class="card"><h3>Complicidad</h3><p>Nos entendíamos sin necesidad de hablar.</p></div>
+      <div class="card"><h3>Risas</h3><p>Reír contigo era mi lugar seguro.</p></div>
+      <div class="card"><h3>Detalles</h3><p>Pequeñas cosas que lo significaban todo.</p></div>
+      <div class="card"><h3>Momentos</h3><p>Hicimos eterno lo efímero.</p></div>
+    </div>
+  </section>
 
+  <section class="crisis">
+    <h2>⚡ Crisis</h2>
+    <div class="grid">
+      <div class="card"><h3>Cambios</h3><p>Ya no éramos los mismos.</p></div>
+      <div class="card"><h3>Distancia</h3><p>Cada vez más lejos, incluso cerca.</p></div>
+      <div class="card"><h3>Confusión</h3><p>No sabía si quedarme o irme.</p></div>
+      <div class="card"><h3>Choques</h3><p>El amor ya no bastaba.</p></div>
+    </div>
+  </section>
+
+  <section class="desamor">
+    <h2>🖤 Desamor</h2>
+    <div class="grid">
+      <div class="card"><h3>Ruptura</h3><p>Nos rompimos intentando no hacernos daño.</p></div>
+      <div class="card"><h3>Silencio</h3><p>Nos quedamos sin palabras… y sin nosotros.</p></div>
+      <div class="card"><h3>Ausencia</h3><p>Te fuiste antes de irte.</p></div>
+      <div class="card"><h3>Vacío</h3><p>Dejaste un espacio que nadie ocupa.</p></div>
+      <span class="center"><div class="card"><h3>Recuerdos</h3><p>Dolía más recordar que olvidar.</p></div>
+      <div class="card"><h3>Olvido</h3><p>Intenté olvidarte… pero aprendí a recordarte sin dolor.</p></div></span>
+    </div>
+  </section>
+
+  <section class="renacer">
+    <h2>🌅 Renacer</h2>
+    <div class="grid">
+      <div class="card"><h3>Aceptar</h3><p>Dejé de preguntarme ‘por qué’.</p></div>
+      <div class="card"><h3>Sanar</h3><p>Poco a poco volví a mí.</p></div>
+      <div class="card"><h3>Aprender</h3><p>Todo dejó una enseñanza.</p></div>
+      <div class="card"><h3>Amor Propio</h3><p>Me elegí por primera vez.</p></div>
+    </div>
+  </section>
+
+  <section class="futuro">
+    <h2>🌈 Futuro</h2>
+    <div class="grid">
+      <div class="card"><h3>Esperanza</h3><p>Volví a creer.</p></div>
+      <div class="card"><h3>Nuevas Historias</h3><p>Todo puede empezar de nuevo.</p></div>
+      <div class="card"><h3>Libertad</h3><p>Sin miedo a sentir.</p></div>
+      <div class="card"><h3>Versión Nueva</h3><p>Ya no soy el mismo… soy mejor.</p></div>
+    </div>
+  </section>
+
+<section class="intentar_otra_vez">
+  <h2> ¿Y si lo volvemos a intentar?</h2>
   <div class="grid">
-
-    <div class="card">
-      <img src="1.png" class="card-image modal-trigger" alt="Ilustración 01 — Primer latido">
-      <div class="title">01 — Primer latido</div>
-      <div class="poem">
-No te conozco,
-pero algo en mí
-ya te reconoce.
-
-No es tu voz,
-ni tu forma,
-ni tu nombre.
-
-Es ese instante
-en el que el tiempo
-titubea
-y el pecho responde
-antes que la mente.
-
-Ahí empieza todo.
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="2.png" class="card-image modal-trigger" alt="Ilustración 02 — Sincronía">
-      <div class="title">02 — Sincronía</div>
-      <div class="poem">
-Aprendimos
-a respirar en el mismo ritmo,
-
-a callar
-sin sentir silencio,
-
-a existir
-sin preguntarnos por qué.
-
-Dos cuerpos,
-una sola pausa
-entre latido y latido.
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="3.png" class="card-image modal-trigger" alt="Ilustración 03 — Ruido blanco">
-      <div class="title">03 — Ruido blanco</div>
-      <div class="poem">
-Hablamos,
-pero las palabras
-no llegan.
-
-Se quedan suspendidas
-en algún lugar
-entre tu miedo
-y el mío.
-
-Y el amor,
-que antes era música,
-ahora
-solo suena a fondo.
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="7.png" class="card-image modal-trigger" alt="Ilustración 04 — Eco">
-      <div class="title">04 — Eco</div>
-      <div class="poem">
-Te fuiste,
-pero no del todo.
-
-Quedaste en las paredes,
-en los gestos,
-en la forma en que
-miro el mundo.
-
-Eres un sonido
-que ya no está,
-pero sigue ocurriendo.
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="5.png" class="card-image modal-trigger" alt="Ilustración 05 — Memoria táctil">
-      <div class="title">05 — Memoria táctil</div>
-      <div class="poem">
-Aún recuerdo
-cómo encajaban
-tus manos en las mías.
-
-No tu cara,
-no tu voz.
-
-Solo ese mapa
-invisible
-que dejamos
-en la piel del otro.
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="6.png" class="card-image modal-trigger" alt="Ilustración 06 — Después de todo">
-      <div class="title">06 — "Después de todo"</div>
-      <div class="poem">
-Y aun así,
-queda algo.
-
-No es amor
-como antes,
-no es fuego,
-ni vértigo.
-
-Es una calma extraña,
-una forma de seguir
-sin romperse.
-
-Porque amar
-también era esto:
-aprender
-a soltar.
-      </div>
-    </div>
-
+    <div class="card"><h3>Reencuentro</h3><p>Quizá no era el final… solo una pausa.</p></div>
+    <div class="card"><h3>Segunda Oportunidad</h3><p>A veces el amor merece intentarse otra vez.</p></div>
+    <div class="card"><h3>Cambiar</h3><p>No somos los mismos… y eso puede ser bueno.</p></div>
+    <div class="card"><h3>Intentarlo</h3><p>Esta vez, sin miedo… pero con más verdad.</p></div>
+    <div class="card"><h3>Volver a Elegirnos</h3><p>Elegirte otra vez… pero mejor.</p></div>
+    <div class="card"><h3>Aprender</h3><p>Lo que falló, ahora puede enseñarnos.</p></div>
+    <div class="card"><h3>Confianza</h3><p>Reconstruir, paso a paso.</p></div>
+    <div class="card"><h3>Nuevo Comienzo</h3><p>No empezar de cero… empezar mejor.</p></div>
   </div>
-</div>
+</section>
 
-<div id="imageModal" class="modal">
-  <span class="close">&times;</span> <img class="modal-content" id="imgModalImg"> </div>
+  <script>
+    const cards = document.querySelectorAll('.card');
 
-<footer>
-  Proyecto personal — 2026
-</footer>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
 
-<script>
-  // Obtener elementos del DOM
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("imgModalImg");
-  const closeBtn = document.getElementsByClassName("close")[0];
-  const triggers = document.querySelectorAll(".modal-trigger"); // Todas las imágenes clicables
-
-  // Función para abrir el modal con la imagen seleccionada
-  function openModal(event) {
-    modal.classList.add('active'); // Muestra el modal
-    modalImg.src = event.target.src; // Pone la imagen en el modal
-  }
-
-  // Función para cerrar el modal
-  function closeModal() {
-    modal.classList.remove('active'); // Oculta el modal
-  }
-
-  // Añadir el listener de clic a todas las imágenes clicables
-  triggers.forEach(trigger => {
-    trigger.addEventListener("click", openModal);
-  });
-
-  // Listener para cerrar al hacer clic en la (X)
-  closeBtn.addEventListener("click", closeModal);
-
-  // Listener para cerrar al hacer clic en cualquier parte del modal (fuera de la imagen)
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Listener para cerrar al presionar la tecla 'Esc'
-  document.addEventListener('keydown', function(event) {
-    if (event.key === "Escape" && modal.classList.contains('active')) {
-      closeModal();
-    }
-  });
-</script>
+    cards.forEach(card => observer.observe(card));
+  </script>
 
 </body>
 </html>
