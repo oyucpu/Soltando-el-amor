@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Amor & Desamor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .amor { background: #ffe4ec; }
+    .conexion { background: #e0f7fa; }
+    .crisis { background: #f8d7da; }
+    .desamor { background: #e5e5e5; }
+    .renacer { background: #fff4cc; }
+    .futuro { background: #e6ffe6; }
+
+    p {
+      color: #555;
+      font-style: italic;
+    }
+   .center {
+      display: flex;
+      justify-content: center; /* centra horizontalmente */
+      gap: 20px; /* espacio entre las dos cards */
+      width: 100%;
+      grid-column: 1 / -1; /* ocupa toda la fila del grid */
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+<h1>Portfolio del Amor y del Desamor</h1>
+
+  <section class="amor">
+    <h2>🌹 Amor</h2>
+    <div class="grid">
+      <div class="card"><h3>Casualidad</h3><p>Coincidir contigo fue la casualidad más intencionada del destino.</p></div>
+      <div class="card"><h3>Primer Latido</h3><p>No sabía tu nombre, pero ya me sabía tu risa.</p></div>
+      <div class="card"><h3>Rutinas Compartidas</h3><p>No eras el plan, pero te convertiste en mi lugar favorito.</p></div>
+      <div class="card"><h3>Descubrirte</h3><p>Me aprendí tus silencios antes que tus palabras.</p></div>
+      <span class="center"><div class="card"><h3>Promesas</h3><p>Contigo, el futuro dejó de dar miedo.</p></div>
+      <div class="card"><h3>Intensidad</h3><p>Éramos fuego… y nunca supimos apagarlo.</p></div></span>
+    </div>
+  </section>
+
+  <section class="conexion">
+    <h2>💫 Conexión</h2>
+    <div class="grid">
+      <div class="card"><h3>Complicidad</h3><p>Nos entendíamos sin necesidad de hablar.</p></div>
+      <div class="card"><h3>Risas</h3><p>Reír contigo era mi lugar seguro.</p></div>
+      <div class="card"><h3>Detalles</h3><p>Pequeñas cosas que lo significaban todo.</p></div>
+      <div class="card"><h3>Momentos</h3><p>Hicimos eterno lo efímero.</p></div>
+    </div>
+  </section>
+
+  <section class="crisis">
+    <h2>⚡ Crisis</h2>
+    <div class="grid">
+      <div class="card"><h3>Cambios</h3><p>Ya no éramos los mismos.</p></div>
+      <div class="card"><h3>Distancia</h3><p>Cada vez más lejos, incluso cerca.</p></div>
+      <div class="card"><h3>Confusión</h3><p>No sabía si quedarme o irme.</p></div>
+      <div class="card"><h3>Choques</h3><p>El amor ya no bastaba.</p></div>
+    </div>
+  </section>
+
+  <section class="desamor">
+    <h2>🖤 Desamor</h2>
+    <div class="grid">
+      <div class="card"><h3>Ruptura</h3><p>Nos rompimos intentando no hacernos daño.</p></div>
+      <div class="card"><h3>Silencio</h3><p>Nos quedamos sin palabras… y sin nosotros.</p></div>
+      <div class="card"><h3>Ausencia</h3><p>Te fuiste antes de irte.</p></div>
+      <div class="card"><h3>Vacío</h3><p>Dejaste un espacio que nadie ocupa.</p></div>
+      <span class="center"><div class="card"><h3>Recuerdos</h3><p>Dolía más recordar que olvidar.</p></div>
+      <div class="card"><h3>Olvido</h3><p>Intenté olvidarte… pero aprendí a recordarte sin dolor.</p></div></span>
+    </div>
+  </section>
+
+  <section class="renacer">
+    <h2>🌅 Renacer</h2>
+    <div class="grid">
+      <div class="card"><h3>Aceptar</h3><p>Dejé de preguntarme ‘por qué’.</p></div>
+      <div class="card"><h3>Sanar</h3><p>Poco a poco volví a mí.</p></div>
+      <div class="card"><h3>Aprender</h3><p>Todo dejó una enseñanza.</p></div>
+      <div class="card"><h3>Amor Propio</h3><p>Me elegí por primera vez.</p></div>
+    </div>
+  </section>
+
+  <section class="futuro">
+    <h2>🌈 Futuro</h2>
+    <div class="grid">
+      <div class="card"><h3>Esperanza</h3><p>Volví a creer.</p></div>
+      <div class="card"><h3>Nuevas Historias</h3><p>Todo puede empezar de nuevo.</p></div>
+      <div class="card"><h3>Libertad</h3><p>Sin miedo a sentir.</p></div>
+      <div class="card"><h3>Versión Nueva</h3><p>Ya no soy el mismo… soy mejor.</p></div>
+    </div>
+  </section>
+
+<section class="intentar_otra_vez">
+  <h2> ¿Y si lo volvemos a intentar?</h2>
+  <div class="grid">
+    <div class="card"><h3>Reencuentro</h3><p>Quizá no era el final… solo una pausa.</p></div>
+    <div class="card"><h3>Segunda Oportunidad</h3><p>A veces el amor merece intentarse otra vez.</p></div>
+    <div class="card"><h3>Cambiar</h3><p>No somos los mismos… y eso puede ser bueno.</p></div>
+    <div class="card"><h3>Intentarlo</h3><p>Esta vez, sin miedo… pero con más verdad.</p></div>
+    <div class="card"><h3>Volver a Elegirnos</h3><p>Elegirte otra vez… pero mejor.</p></div>
+    <div class="card"><h3>Aprender</h3><p>Lo que falló, ahora puede enseñarnos.</p></div>
+    <div class="card"><h3>Confianza</h3><p>Reconstruir, paso a paso.</p></div>
+    <div class="card"><h3>Nuevo Comienzo</h3><p>No empezar de cero… empezar mejor.</p></div>
+  </div>
+</section>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
