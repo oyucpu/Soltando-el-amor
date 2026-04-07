@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Geometría de un «Nosotros»</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f1e8;
+      color: #111;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      position: relative;
+    }
+
+    .circle {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(200, 80, 60, 0.2);
+      position: absolute;
+      animation: pulse 4s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.2); opacity: 0.6; }
+      100% { transform: scale(1); opacity: 0.3; }
+    }
+
+    .figure {
+      width: 120px;
+      height: 220px;
+      background: radial-gradient(#000 1px, transparent 1px);
+      background-size: 4px 4px;
+      opacity: 0.8;
+      position: absolute;
+      transition: all 1s ease;
+    }
+
+    .left { left: 30%; }
+    .right { right: 30%; }
+
+    .connected .left { transform: translateX(50px); }
+    .connected .right { transform: translateX(-50px); }
+
+    .line {
+      position: absolute;
+      width: 2px;
+      height: 200px;
+      background: #000;
+      transform: rotate(90deg);
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .connected .line {
+      opacity: 1;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      border: none;
+      background: #111;
+      color: white;
+      cursor: pointer;
+      letter-spacing: 1px;
+    }
+
+    /* NUEVA SECCIÓN DE IMÁGENES */
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      filter: grayscale(100%) contrast(110%);
+      opacity: 0.85;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 20px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  03. GEOMETRÍA DE UN «NOSOTROS»
+</header>
+
+<div class="container" id="scene">
+  <div class="circle"></div>
+  <div class="figure left"></div>
+  <div class="figure right"></div>
+  <div class="line"></div>
+</div>
+
+<button onclick="toggleConnection()">SINCRONIZAR</button>
+
+<!-- NUEVAS IMÁGENES -->
+<div class="gallery">
+  <img src="8.png" alt="composición abstracta 1">
+  <img src="9.png" alt="composición abstracta 2">
+</div>
+
+<footer>
+  "Sincronizar no es coincidir. Es tolerar el desfase."
+</footer>
+
+<script>
+  function toggleConnection() {
+    const scene = document.getElementById('scene');
+    scene.classList.toggle('connected');
+  }
+</script>
+
+</body>
+</html>
